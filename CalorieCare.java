@@ -73,4 +73,12 @@ public class CalorieCare {
             System.out.println("Invalid index. No recipe deleted.");
         }
     }
+
+    public void viewRecipeDetails(int index) {
+        if (index >= 0 && index < recipes.size()) {
+            recipes.get(index).displayRecipe();
+        } else {
+            System.out.println("Invalid index. No recipe details available.");
+        }
+    }
 }

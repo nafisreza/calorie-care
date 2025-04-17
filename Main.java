@@ -33,7 +33,20 @@ public class Main {
                     break;
 
                 case 2:
-                    app.listRecipes();
+                    if (app.getRecipes().isEmpty()) {
+                        System.out.println("No recipes available.");
+                        break;
+                    }
+
+                    System.out.println("Select a recipe to view details:");
+                    for (int i = 0; i < app.getRecipes().size(); i++) {
+                        System.out.println((i + 1) + ". " + app.getRecipes().get(i).getName());
+                    }
+
+                    int recipeDetailIndex = scanner.nextInt() - 1;
+                    scanner.nextLine(); // Consume newline
+
+                    app.viewRecipeDetails(recipeDetailIndex);
                     break;
 
                 case 3:
