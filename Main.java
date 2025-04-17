@@ -17,7 +17,7 @@ public class Main {
             System.out.println("6. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -27,7 +27,7 @@ public class Main {
                     String ingredientsInput = scanner.nextLine();
                     System.out.println("Enter calories:");
                     int calories = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine(); 
 
                     app.addRecipe(new Recipe(name, Arrays.asList(ingredientsInput.split(",")), calories));
                     break;
@@ -44,7 +44,7 @@ public class Main {
                     }
 
                     int recipeDetailIndex = scanner.nextInt() - 1;
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine(); 
 
                     app.viewRecipeDetails(recipeDetailIndex);
                     break;
@@ -58,7 +58,7 @@ public class Main {
                 case 4:
                     System.out.println("Enter maximum calories:");
                     int maxCalories = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine(); 
                     app.filterRecipesByCalories(maxCalories);
                     break;
 
@@ -74,7 +74,7 @@ public class Main {
                     }
 
                     int recipeIndex = scanner.nextInt() - 1;
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine(); 
 
                     if (recipeIndex >= 0 && recipeIndex < app.getRecipes().size()) {
                         String deletedRecipeName = app.getRecipes().get(recipeIndex).getName();
@@ -85,7 +85,7 @@ public class Main {
                     break;
 
                 case 6:
-                    System.out.println("Thank you for using 'Savour the Flavours of Health'! Goodbye!");
+                    System.out.println("Thank you for using CalorieCare! Goodbye!");
                     scanner.close();
                     return;
 
