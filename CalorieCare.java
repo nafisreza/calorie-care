@@ -38,8 +38,16 @@ public class CalorieCare {
         }
     }
 
-    public void deleteRecipe(String name) {
-        recipes.removeIf(recipe -> recipe.getName().equalsIgnoreCase(name));
-        System.out.println("Recipe deleted: " + name);
+    public List<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void deleteRecipe(int index) {
+        if (index >= 0 && index < recipes.size()) {
+            Recipe removedRecipe = recipes.remove(index);
+            System.out.println("Recipe deleted: " + removedRecipe.getName());
+        } else {
+            System.out.println("Invalid index. No recipe deleted.");
+        }
     }
 }
